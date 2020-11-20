@@ -1,0 +1,6 @@
+/home/raihan/eLRD-Lab/project_base_raw/java_spring_angular_project_01/base/spring-boot-rest-api/src/main/java/com/example/restservice/controllers/tutorial/TutorialController.java
+/home/raihan/eLRD-Lab/project_base_raw/java_spring_angular_project_01/base/spring-boot-rest-api/src/main/java/com/example/restservice/RestServiceApplication.java
+/home/raihan/eLRD-Lab/project_base_raw/java_spring_angular_project_01/base/spring-boot-rest-api/src/main/java/com/example/restservice/Greeting.java
+/home/raihan/eLRD-Lab/project_base_raw/java_spring_angular_project_01/base/spring-boot-rest-api/src/main/java/com/example/restservice/repository/TutorialRepository.java
+/home/raihan/eLRD-Lab/project_base_raw/java_spring_angular_project_01/base/spring-boot-rest-api/src/main/java/com/example/restservice/GreetingController.java
+/home/raihan/eLRD-Lab/project_base_raw/java_spring_angular_project_01/base/spring-boot-rest-api/src/main/java/com/example/restservice/models/tutorial/Tutorial.java
