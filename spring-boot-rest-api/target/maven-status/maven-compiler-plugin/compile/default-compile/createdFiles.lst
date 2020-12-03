@@ -1,3 +1,6 @@
-com/example/restservice/Greeting.class
-com/example/restservice/RestServiceApplication.class
-com/example/restservice/GreetingController.class
+com\example\restservice\RestServiceApplication.class
+com\example\restservice\repository\DoctorRepository.class
+com\example\restservice\models\doctor\Doctor.class
+com\example\restservice\GreetingController.class
+com\example\restservice\Greeting.class
+com\example\restservice\controllers\doctor\DoctorController.class
