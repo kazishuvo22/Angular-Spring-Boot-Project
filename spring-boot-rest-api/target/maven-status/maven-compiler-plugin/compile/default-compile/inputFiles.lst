@@ -1,9 +1,12 @@
-C:\Users\Dell\Desktop\Problem 2\intern-11-2020-spring-angular-problem\spring-boot-rest-api\src\main\java\com\example\restservice\Greeting.java
-C:\Users\Dell\Desktop\Problem 2\intern-11-2020-spring-angular-problem\spring-boot-rest-api\src\main\java\com\example\restservice\RestServiceApplication.java
-C:\Users\Dell\Desktop\Problem 2\intern-11-2020-spring-angular-problem\spring-boot-rest-api\src\main\java\com\example\restservice\models\tutorial\Tutorial.java
-C:\Users\Dell\Desktop\Problem 2\intern-11-2020-spring-angular-problem\spring-boot-rest-api\src\main\java\com\example\restservice\controllers\doctor\DoctorController.java
-C:\Users\Dell\Desktop\Problem 2\intern-11-2020-spring-angular-problem\spring-boot-rest-api\src\main\java\com\example\restservice\controllers\tutorial\TutorialController.java
-C:\Users\Dell\Desktop\Problem 2\intern-11-2020-spring-angular-problem\spring-boot-rest-api\src\main\java\com\example\restservice\repository\DoctorRepository.java
-C:\Users\Dell\Desktop\Problem 2\intern-11-2020-spring-angular-problem\spring-boot-rest-api\src\main\java\com\example\restservice\GreetingController.java
-C:\Users\Dell\Desktop\Problem 2\intern-11-2020-spring-angular-problem\spring-boot-rest-api\src\main\java\com\example\restservice\repository\TutorialRepository.java
-C:\Users\Dell\Desktop\Problem 2\intern-11-2020-spring-angular-problem\spring-boot-rest-api\src\main\java\com\example\restservice\models\doctor\Doctor.java
+C:\Users\ksdea\Documents\Internship\VIS\intern-11-2020-spring-angular-problem\spring-boot-rest-api\src\main\java\com\example\restservice\repository\DoctorRepository.java
+C:\Users\ksdea\Documents\Internship\VIS\intern-11-2020-spring-angular-problem\spring-boot-rest-api\src\main\java\com\example\restservice\GreetingController.java
+C:\Users\ksdea\Documents\Internship\VIS\intern-11-2020-spring-angular-problem\spring-boot-rest-api\src\main\java\com\example\restservice\repository\PatientRepository.java
+C:\Users\ksdea\Documents\Internship\VIS\intern-11-2020-spring-angular-problem\spring-boot-rest-api\src\main\java\com\example\restservice\controllers\patient\PatientController.java
+C:\Users\ksdea\Documents\Internship\VIS\intern-11-2020-spring-angular-problem\spring-boot-rest-api\src\main\java\com\example\restservice\models\patient\Patient.java
+C:\Users\ksdea\Documents\Internship\VIS\intern-11-2020-spring-angular-problem\spring-boot-rest-api\src\main\java\com\example\restservice\models\tutorial\Tutorial.java
+C:\Users\ksdea\Documents\Internship\VIS\intern-11-2020-spring-angular-problem\spring-boot-rest-api\src\main\java\com\example\restservice\RestServiceApplication.java
+C:\Users\ksdea\Documents\Internship\VIS\intern-11-2020-spring-angular-problem\spring-boot-rest-api\src\main\java\com\example\restservice\controllers\doctor\DoctorController.java
+C:\Users\ksdea\Documents\Internship\VIS\intern-11-2020-spring-angular-problem\spring-boot-rest-api\src\main\java\com\example\restservice\controllers\tutorial\TutorialController.java
+C:\Users\ksdea\Documents\Internship\VIS\intern-11-2020-spring-angular-problem\spring-boot-rest-api\src\main\java\com\example\restservice\repository\TutorialRepository.java
+C:\Users\ksdea\Documents\Internship\VIS\intern-11-2020-spring-angular-problem\spring-boot-rest-api\src\main\java\com\example\restservice\Greeting.java
+C:\Users\ksdea\Documents\Internship\VIS\intern-11-2020-spring-angular-problem\spring-boot-rest-api\src\main\java\com\example\restservice\models\doctor\Doctor.java
