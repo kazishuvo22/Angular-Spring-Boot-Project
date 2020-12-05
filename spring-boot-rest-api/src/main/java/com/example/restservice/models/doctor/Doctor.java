@@ -3,15 +3,6 @@ package com.example.restservice.models.doctor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-/**
- * doctor_id (Primary key)
- * doctor_name
- * speciality
- * doctor_address
- * hospital_name
- * about
- * profile_picture (null)
- */
 
 @Document(collection = "doctors")
 public class Doctor {

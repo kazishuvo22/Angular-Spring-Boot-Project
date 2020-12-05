@@ -1,8 +1,10 @@
 package com.example.restservice.controllers.patient;
 
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import org.springframework.data.annotation.CreatedDate;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -59,7 +61,7 @@ public class PatientController {
         }
     }
 
-    @GetMapping("/patients/name/{name}")
+    @GetMapping("/patients/{name}")
     public ResponseEntity<List<Patient>>  getByPatientname(@PathVariable("name") String name) {
         List<Patient> patients = new ArrayList<Patient>();
         List <Patient> patientData = patientRepository.findByNameContaining(name);
@@ -73,6 +75,21 @@ public class PatientController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
+    @GetMapping("/patients/{dob}")
+    public ResponseEntity<List<Patient>>  getByPatientDob( @PathVariable("dob") Date dob ) {
+        List<Patient> patients = new ArrayList<Patient>();
+        List<Patient> patientData = patientRepository.findByDobContaining(dob);
+
+        if (!patientData.isEmpty()) {
+            patientRepository.findByDobContaining(dob).forEach(patients::add);
+            return new ResponseEntity<>(patients, HttpStatus.OK);
+
+        } else {
+
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
 
     @PostMapping("/patients")
     public ResponseEntity<Patient> createPatient(@RequestBody Patient patient) {
