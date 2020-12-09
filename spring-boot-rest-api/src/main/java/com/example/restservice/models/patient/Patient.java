@@ -5,7 +5,6 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.Date;
 
 @Document(collection = "patients")
@@ -16,7 +15,7 @@ public class Patient {
     private String name;
 
     @CreatedDate
-    private LocalDate entrydate;
+    private LocalDate entrydate = LocalDate.now();
 
     private Date dob;
     private Integer age;

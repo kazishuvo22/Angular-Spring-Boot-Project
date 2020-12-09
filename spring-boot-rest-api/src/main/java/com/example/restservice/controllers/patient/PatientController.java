@@ -1,10 +1,10 @@
 package com.example.restservice.controllers.patient;
 
 import java.sql.Date;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import org.springframework.data.annotation.CreatedDate;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -61,9 +61,10 @@ public class PatientController {
         }
     }
 
-    @GetMapping("/patients/{name}")
+    @GetMapping("/patients/name/{name}")
     public ResponseEntity<List<Patient>>  getByPatientname(@PathVariable("name") String name) {
         List<Patient> patients = new ArrayList<Patient>();
+        System.out.println(name);
         List <Patient> patientData = patientRepository.findByNameContaining(name);
 
         if (!patientData.isEmpty()) {
@@ -75,17 +76,29 @@ public class PatientController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
-    @GetMapping("/patients/{dob}")
-    public ResponseEntity<List<Patient>>  getByPatientDob( @PathVariable("dob") Date dob ) {
+    @PostMapping("/patients/dob")
+    public ResponseEntity<List<Patient>>  postByPatientDob( @RequestBody Patient patient ) throws ParseException {
         List<Patient> patients = new ArrayList<Patient>();
-        List<Patient> patientData = patientRepository.findByDobContaining(dob);
+
+        List<Patient> patientData = patientRepository.findByDobContaining(patient.getDob());
 
         if (!patientData.isEmpty()) {
-            patientRepository.findByDobContaining(dob).forEach(patients::add);
+            patientRepository.findByDobContaining(patient.getDob()).forEach(patients::add);
             return new ResponseEntity<>(patients, HttpStatus.OK);
 
         } else {
 
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
+    @PostMapping("/patients/namedob")
+    public ResponseEntity<Patient> postByPatientNameandDob(@RequestBody Patient patient) {
+        Optional<Patient> patientData = patientRepository.findByNameContainingAndDob(patient.getName(), patient.getDob());
+
+        if (patientData.isPresent()) {
+            return new ResponseEntity<>(patientData.get(), HttpStatus.OK);
+        } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
