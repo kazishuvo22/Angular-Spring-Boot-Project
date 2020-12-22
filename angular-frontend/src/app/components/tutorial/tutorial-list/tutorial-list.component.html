@@ -1,0 +1,27 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h2>Tutorial List</h2>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Published</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let tutorial of tutorials | async">
+        <td>{{tutorial.title}}</td>
+        <td>{{tutorial.description}}</td>
+        <td>{{tutorial.published}}</td>
+        <td><button (click)="deleteTutorial(tutorial.id)" class="btn btn-danger">Delete</button>
+          <button (click)="updateTutorial(tutorial.id)" class="btn btn-info" style="margin-left: 10px">Update</button>
+          <button (click)="tutorialDetails(tutorial.id)" class="btn btn-info" style="margin-left: 10px">Details</button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

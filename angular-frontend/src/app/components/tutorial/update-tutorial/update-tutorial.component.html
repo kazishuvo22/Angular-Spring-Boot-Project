@@ -1,0 +1,31 @@
+<div class="row row justify-content-center align-self-center">
+
+<div style="width: 400px;">
+  <h3>Update Tutorial</h3><br>
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Title</label>
+      <input type="text" class="form-control" id="title" required [(ngModel)]="tutorial.title" name="title">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Description</label>
+      <input type="text" class="form-control" id="description" required [(ngModel)]="tutorial.description" name="description">
+    </div>
+    <div class="form-group">
+      <label for="name">Published?</label><br>
+      <input type="radio"  id="true" [(ngModel)]="tutorial.published" name="published" [value]=true >
+      <label for="true">True</label><br>
+      <input type="radio" id="false" [(ngModel)]="tutorial.published" [value]=false name="published" >
+      <label for="false">False</label><br>
+    </div>
+
+
+    <button type="submit" class="btn btn-success">Update</button>
+  </form>
+
+  <br>
+  <br>
+  <button (click)="list()" class="btn btn-primary">Back to Tutorial List</button><br>
+</div>
+</div>
