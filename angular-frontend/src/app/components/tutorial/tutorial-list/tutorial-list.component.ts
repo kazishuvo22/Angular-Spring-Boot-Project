@@ -35,10 +35,10 @@ export class TutorialListComponent implements OnInit {
   }
 
   tutorialDetails(id: string){
-    this.router.navigate(['details', id]);
+    this.router.navigate(['tutorialDetails', id]);
   }
 
   updateTutorial(id: string){
-    this.router.navigate(['update', id]);
+    this.router.navigate(['updateTutorial', id]);
   }
 }

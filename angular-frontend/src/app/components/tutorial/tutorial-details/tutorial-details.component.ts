@@ -33,7 +33,7 @@ export class TutorialDetailsComponent implements OnInit {
     this.router.navigate(['tutorials']);
   }
   updateLink(){
-    this.router.navigate(['update/' + this.tutorial.id]);
+    this.router.navigate(['updateTutorial/' + this.tutorial.id]);
   }
 
 }

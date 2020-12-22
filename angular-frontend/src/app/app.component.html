@@ -303,27 +303,26 @@
   <nav class="navbar navbar-expand navbar-dark bg-dark">
     <a href="/" class="navbar-brand">New Life Hospital</a>
     <div class="navbar-nav mr-auto">
-<!--      <li class="nav-item">-->
-<!--        <a routerLink="tutorials" class="nav-link">Tutorials</a>-->
-<!--      </li>-->
-<!--      <li class="nav-item">-->
-<!--        <a routerLink="create" class="nav-link">Add</a>-->
-<!--      </li>-->
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Tutorials
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a routerLink="tutorials" class="dropdown-item">Tutorials List</a>
-          <a routerLink="create" class="dropdown-item">Add Tutorial</a>
+          <a routerLink="createTutorial" class="dropdown-item">Add Tutorial</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Doctors
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a routerLink="doctors" class="dropdown-item">Doctor List</a>
+          <a routerLink="createDoctor" class="dropdown-item">Add Doctor</a>
         </div>
       </li>
     </div>
   </nav>
-
-<!--  <div class="container mt-3">-->
-<!--    <router-outlet></router-outlet>-->
-<!--  </div>-->
 </div>
 
 
