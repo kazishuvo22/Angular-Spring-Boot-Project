@@ -16,7 +16,7 @@ export class DoctorDetailsComponent implements OnInit {
   constructor(private route: ActivatedRoute, private router: Router,
               private doctorService: DoctorService) { }
 
-  ngOnInit() {
+  ngOnInit():void {
     this.doctor = new Doctor();
 
     this.id = this.route.snapshot.params['id'];

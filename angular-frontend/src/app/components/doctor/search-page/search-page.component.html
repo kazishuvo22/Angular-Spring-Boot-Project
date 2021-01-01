@@ -1,0 +1,36 @@
+<div class="container" align="center">
+    <h3>Search Page</h3>
+    <!-- Search form -->
+    <form (ngSubmit)="onSubmit()" class="form-inline md-form mr-auto mb-4">
+        <b>Doctor Search By Name</b>
+      <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" align="center"
+             id="doctorname" required [(ngModel)]="doctor.doctorname" name="doctorname">
+      <button mdbBtn size="sm" gradient="aqua" rounded="true" class="my-0 waves-light" mdbWavesEffect type="submit">Search</button>
+    </form>
+  </div>
+
+ <div class="panel-body">
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Doctor Name</th>
+      <th>Speciality</th>
+      <th>Hospital Name</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="doctor in doctors | filter: search">
+      <td>{{doctor.doctorname}}</td>
+      <td>{{doctor.speciality}}</td>
+      <td>{{doctor.hospital_name}}</td>
+      <td>
+        <button (click)="doctorDetails(doctor.id)" class="btn btn-info" style="margin-left: 10px">Details</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+
+
+

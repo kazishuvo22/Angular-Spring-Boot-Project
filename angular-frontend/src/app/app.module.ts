@@ -14,6 +14,10 @@ import { AddDoctorComponent } from './components/doctor/add-doctor/add-doctor.co
 import { DoctorListComponent } from './components/doctor/doctor-list/doctor-list.component';
 import { DoctorDetailsComponent } from './components/doctor/doctor-details/doctor-details.component';
 import { UpdateDoctorComponent } from './components/doctor/update-doctor/update-doctor.component';
+import { SearchDoctorNameComponent } from './components/doctor/search-doctor-name/search-doctor-name.component';
+import { SearchPageComponent } from './components/doctor/search-page/search-page.component';
+import { AddPatientComponent } from './components/patient/add-patient/add-patient.component';
+
 
 
 @NgModule({
@@ -27,6 +31,9 @@ import { UpdateDoctorComponent } from './components/doctor/update-doctor/update-
     DoctorListComponent,
     DoctorDetailsComponent,
     UpdateDoctorComponent,
+    SearchDoctorNameComponent,
+    SearchPageComponent,
+    AddPatientComponent
   ],
     imports: [
         RouterModule,

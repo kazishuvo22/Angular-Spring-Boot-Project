@@ -1,20 +1,25 @@
 <div class="row row justify-content-center align-self-center">
-  <div style="width: 400px;" *ngIf="doctor">
+  <div *ngIf="doctor">
     <h2>Doctor Details</h2>
     <div>
-      <label><b>Doctor Name </b></label> {{doctor.doctorname}}
+      <label><b>Doctor Name </b></label>
+      <p>{{doctor.doctorname}}</p>
     </div>
     <div>
-      <label><b>Doctor Address </b></label> {{doctor.doctor_address}}
+      <label><b>Doctor Address </b></label>
+      <p>{{doctor.doctor_address}}</p>
     </div>
     <div>
-      <label><b>Hospital Name </b></label> {{doctor.hospital_name}}
+      <label><b>Hospital Name </b></label>
+      <p>{{doctor.hospital_name}}</p>
     </div>
     <div>
-      <label><b>About </b></label> {{doctor.about}}
+      <label><b>About </b></label>
+      <p>{{doctor.about}}</p>
     </div>
     <div>
-      <label><b>Profile Picture </b></label> {{doctor.profile_picture}}
+      <label><b>Profile Picture :  </b></label>
+      {{doctor.profile_picture}}
     </div>
 
     <br>

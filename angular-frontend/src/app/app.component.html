@@ -296,6 +296,8 @@
       visibility: hidden;
     }
   }
+
+
 </style>
 
 <!-- Toolbar -->
@@ -321,6 +323,21 @@
           <a routerLink="createDoctor" class="dropdown-item">Add Doctor</a>
         </div>
       </li>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Patients
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a routerLink="patients" class="dropdown-item">Patient List</a>
+          <a routerLink="createPatient" class="dropdown-item">Add Patient</a>
+        </div>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a routerLink="searchPage" class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Search
+        </a>
     </div>
   </nav>
 </div>
@@ -333,7 +350,6 @@
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * *  -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
 
 
 <router-outlet></router-outlet>
