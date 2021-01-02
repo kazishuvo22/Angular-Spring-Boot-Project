@@ -8,7 +8,7 @@ export class Patient{
   age:number;
   gender:string;
   occupation:string;
-  healthinsuranceno:number;
+  healthinsuranceno:string;
   healthcareprovider:string;
   patientaddress:string;
   contact:number;

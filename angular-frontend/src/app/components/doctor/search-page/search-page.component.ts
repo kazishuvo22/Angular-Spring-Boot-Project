@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
-import {ActivatedRoute, Router} from '@angular/router';
-import { DoctorService } from '../../../services/doctor.service';
-import { Doctor } from '../../../classes/doctor';
+import { Patient } from '../../../classes/patient';
 import {Observable} from "rxjs";
+import {FormBuilder} from "@angular/forms";
+import {PatientService} from "../../../services/patient.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-search-page',
@@ -12,31 +13,32 @@ import {Observable} from "rxjs";
 })
 export class SearchPageComponent implements OnInit {
 
-  doctors: Observable<Doctor[]>;
+  patients: Observable<Patient[]>;
+  searchForm;
+  constructor(private patientService: PatientService, private router: Router,
+              private formBuilder:FormBuilder )
+      {
+        this.searchForm = this.formBuilder.group({
+          patient_name: '',
+          patient_dob:'',
 
-  constructor(private doctorService: DoctorService, private router: Router,private route: ActivatedRoute,) { }
-  doctor:Doctor = new Doctor();
-  submitted = false;
-  doctorname: string;
+    });
 
+  }
 
   ngOnInit():void {
   }
 
-  onSubmit():void{
-    this.doctor = new Doctor();
-
-    this.doctorname = this.route.snapshot.params['doctorname'];
-
-    this.doctorService.get(this.doctorname)
-      .subscribe(data => {
-        console.log(data);
-        this.doctor = data;
-      }, error => console.log(error));
+  OnSubmit(searchName){
+    console.log('Search Patient name and Dob:');
+    console.log(searchName.patient_name);
+    console.log(searchName.patient_dob);
+    this.patients = this.patientService.findByPatientNameDob(searchName.patient_name, searchName.patient_dob);
   }
 
+  patientDetails(id: string) {
+    this.router.navigate(['patientDetails', id]);
 
-  doctorDetails(doctorname: string) {
-    this.router.navigate(['doctorDetails',doctorname]);
   }
+
 }

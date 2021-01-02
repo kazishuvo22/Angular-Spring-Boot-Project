@@ -54,7 +54,7 @@ public class PatientController {
         }
     }
 
-    @GetMapping("/patients/name/{name}")
+    @GetMapping("/patients/?name={name}")
     public ResponseEntity<List<Patient>>  getByPatientname(@PathVariable("name") String name) {
         List<Patient> patients = new ArrayList<Patient>();
         System.out.println(name);

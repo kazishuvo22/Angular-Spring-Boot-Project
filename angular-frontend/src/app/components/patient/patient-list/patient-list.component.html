@@ -1,0 +1,34 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h2>Patient List
+      <form class="form-inline d-flex md-form form-sm active-pink active-pink-2 mt-2"
+            [formGroup]="searchForm" (ngSubmit)="OnSubmit(searchForm.value)" >
+        <input class="form-control mr-sm-2" type="text" placeholder="Enter Patient Name" id="name" formControlName="name">
+        <button type="submit" class="btn btn-outline-success my-2 my-sm-0">Search</button>
+      </form>
+    </h2>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>Patient Name</th>
+        <th>Contact Number</th>
+        <th>Doctor ID</th>
+
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let patient of patients | async">
+        <td>{{patient.name}}</td>
+        <td>{{patient.contact}}</td>
+        <td>{{patient.doctorid}}</td>
+        <td><button (click)="deletePatient(patient.id)" class="btn btn-danger">Delete</button>
+          <button (click)="updatePatient(patient.id)" class="btn btn-info" style="margin-left: 10px">Update</button>
+          <button (click)="patientDetails(patient.id)" class="btn btn-info" style="margin-left: 10px">Details</button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

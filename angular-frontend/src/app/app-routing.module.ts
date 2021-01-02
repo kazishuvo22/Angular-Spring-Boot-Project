@@ -10,9 +10,12 @@ import { AddDoctorComponent } from './components/doctor/add-doctor/add-doctor.co
 import {DoctorListComponent} from "./components/doctor/doctor-list/doctor-list.component";
 import {DoctorDetailsComponent} from "./components/doctor/doctor-details/doctor-details.component";
 import {UpdateDoctorComponent} from "./components/doctor/update-doctor/update-doctor.component";
-import {SearchDoctorNameComponent} from "./components/doctor/search-doctor-name/search-doctor-name.component";
 import {SearchPageComponent} from "./components/doctor/search-page/search-page.component";
 import {AddPatientComponent} from "./components/patient/add-patient/add-patient.component";
+
+//import patient components into app module
+import {PatientListComponent} from "./components/patient/patient-list/patient-list.component";
+import {PatientDetailsComponent} from "./components/patient/patient-details/patient-details.component";
 
 const routes: Routes = [
   //Tutorial components route here
@@ -26,15 +29,15 @@ const routes: Routes = [
   { path: '', redirectTo: 'doctor', pathMatch: 'full'},
   { path: 'doctors', component: DoctorListComponent},
   { path: 'createDoctor', component: AddDoctorComponent },
-  {path: 'doctorDetails/:id', component: DoctorDetailsComponent},
+  { path: 'doctorDetails/:id', component: DoctorDetailsComponent},
   { path: 'updateDoctor/:id', component: UpdateDoctorComponent},
   { path: 'searchPage', component: SearchPageComponent},
-  { path: 'searchDoctorName/:name', component: SearchDoctorNameComponent},
 
   //Patient components route here
   { path: '', redirectTo: 'patient', pathMatch: 'full'},
- // { path: 'patient', component: PatientListComponent},
+  { path: 'patients', component: PatientListComponent},
   { path: 'createPatient', component: AddPatientComponent },
+  { path: 'patientDetails/:id', component: PatientDetailsComponent },
 ];
 
 @NgModule({

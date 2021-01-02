@@ -1,40 +1,64 @@
 <div class="row row justify-content-center align-self-center">
   <div [hidden]="submitted" style="width: 500px;" >
-    <h3>Add Doctor Information</h3>
+    <h3>Add Patient Information</h3>
     <form (ngSubmit)="onSubmit()">
       <div class="form-group">
-        <label for="doctorname">Doctor Name</label>
-        <input type="text" class="form-control" id="doctorname" required [(ngModel)]="doctor.doctorname" name="doctorname">
+        <label for="name">Patient Name</label>
+        <input type="text" class="form-control" id="name" required [(ngModel)]="patient.name" name="name">
       </div>
 
       <div class="form-group">
-        <label for="speciality">Speciality</label>
-        <input type="text" class="form-control" id="speciality" required [(ngModel)]="doctor.speciality" name="speciality">
+        <label for="entrydate">Entry Date</label>
+        <input type="date" class="form-control" id="entrydate" required [(ngModel)]="patient.entrydate" name="entrydate">
       </div>
 
       <div class="form-group">
-        <label for="doctor_address">Doctor Address</label>
-        <input type="text" class="form-control" id="doctor_address" required [(ngModel)]="doctor.doctor_address" name="doctor_address">
+        <label for="dob">Date of Birth</label>
+        <input type="date" class="form-control" id="dob" required [(ngModel)]="patient.dob" name="dob">
       </div>
 
       <div class="form-group">
-        <label for="hospital_name">Hospital Name</label>
-        <input type="text" class="form-control" id="hospital_name" required [(ngModel)]="doctor.hospital_name" name="hospital_name">
+        <label for="age">Age</label>
+        <input type="number" class="form-control" id="age" required [(ngModel)]="patient.age" name="age">
       </div>
 
       <div class="form-group">
-        <label for="about">About</label>
-        <input type="text" class="form-control" id="about" required [(ngModel)]="doctor.about" name="about">
+        <label>Gender</label><br>
+        <input type="radio"  id="male" [(ngModel)]="patient.gender" name="male" value=male>
+        <label for="male">Male</label><br>
+        <input type="radio" id="female" [(ngModel)]="patient.gender" name="female" value=female>
+        <label for="female">Female</label><br>
       </div>
 
       <div class="form-group">
-        <label>Profile Picture?</label><br>
-        <input type="radio"  id="true" [(ngModel)]="doctor.profile_picture" name="profile_picture" value=true>
-        <label for="true">True</label><br>
-        <input type="radio" id="false" [(ngModel)]="doctor.profile_picture" value=false name="profile_picture">
-        <label for="false">False</label><br>
+        <label for="occupation">Occupation</label>
+        <input type="occupation" class="form-control" id="occupation" required [(ngModel)]="patient.occupation" name="occupation">
       </div>
 
+      <div class="form-group">
+        <label for="healthinsuranceno">Health Insurance No</label>
+        <input type="healthinsuranceno" class="form-control" id="healthinsuranceno" required [(ngModel)]="patient.healthinsuranceno" name="healthinsuranceno">
+      </div>
+
+      <div class="form-group">
+        <label for="healthcareprovider">Healthcare Provider</label>
+        <input type="healthcareprovider" class="form-control" id="healthcareprovider" required [(ngModel)]="patient.healthcareprovider" name="healthcareprovider">
+      </div>
+
+      <div class="form-group">
+        <label for="patientaddress">Patient Address</label>
+        <input type="patientaddress" class="form-control" id="patientaddress" required [(ngModel)]="patient.patientaddress" name="patientaddress">
+      </div>
+
+      <div class="form-group">
+        <label for="contact">Contact Number</label>
+        <input type="number" class="form-control" id="contact" required [(ngModel)]="patient.contact" name="contact">
+      </div>
+
+      <div class="form-group">
+        <label for="doctorid">Doctor ID</label>
+        <input type="text" class="form-control" id="doctorid" required [(ngModel)]="patient.doctorid" name="doctorid">
+      </div>
 
       <button type="submit" class="btn btn-success">Submit</button>
     </form>

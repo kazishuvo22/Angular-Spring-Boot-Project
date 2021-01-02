@@ -1,30 +1,32 @@
 <div class="container" align="center">
-    <h3>Search Page</h3>
+    <h3>Advance Search Page for Patients</h3>
     <!-- Search form -->
-    <form (ngSubmit)="onSubmit()" class="form-inline md-form mr-auto mb-4">
-        <b>Doctor Search By Name</b>
-      <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" align="center"
-             id="doctorname" required [(ngModel)]="doctor.doctorname" name="doctorname">
-      <button mdbBtn size="sm" gradient="aqua" rounded="true" class="my-0 waves-light" mdbWavesEffect type="submit">Search</button>
-    </form>
+  <form class="form-inline d-flex md-form form-sm active-pink active-pink-2 mt-2"
+        [formGroup]="searchForm" (ngSubmit)="OnSubmit(searchForm.value)" >
+    <b>Paitent Search By Name and Date of Birth</b><br>
+    <input class="form-control mr-sm-2" type="text" placeholder="Enter Patient Name" id="patient_name" formControlName="patient_name">
+    <input class="form-control mr-sm-2" type="Date" placeholder="Enter Patient DOB" id="patient_dob" formControlName="patient_dob">
+    <button type="submit" class="btn btn-outline-success my-2 my-sm-0">Search</button>
+  </form>
   </div>
 
- <div class="panel-body">
+<div class="panel-body">
   <table class="table table-striped">
     <thead>
     <tr>
-      <th>Doctor Name</th>
-      <th>Speciality</th>
-      <th>Hospital Name</th>
+      <th>Patient Name</th>
+      <th>Contact Number</th>
+      <th>Doctor ID</th>
+
     </tr>
     </thead>
     <tbody>
-    <tr ng-repeat="doctor in doctors | filter: search">
-      <td>{{doctor.doctorname}}</td>
-      <td>{{doctor.speciality}}</td>
-      <td>{{doctor.hospital_name}}</td>
+    <tr *ngFor="let patient of patients | async">
+      <td>{{patient.name}}</td>
+      <td>{{patient.contact}}</td>
+      <td>{{patient.doctorid}}</td>
       <td>
-        <button (click)="doctorDetails(doctor.id)" class="btn btn-info" style="margin-left: 10px">Details</button>
+        <button (click)="patientDetails(patient.id)" class="btn btn-info" style="margin-left: 10px">Details</button>
       </td>
     </tr>
     </tbody>

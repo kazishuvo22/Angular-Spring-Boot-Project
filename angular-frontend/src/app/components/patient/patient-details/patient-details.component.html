@@ -1,0 +1,49 @@
+<div class="row row justify-content-center align-self-center">
+  <div *ngIf="patient">
+    <h2>Patient Details</h2>
+    <div class="container">
+    <div>
+      <label><b>Patient Name </b></label>
+      <p>{{patient.name}}</p>
+    </div>
+    <div>
+      <label><b>Entry Date </b></label>
+      <p>{{patient.entrydate}}</p>
+    </div>
+    <div>
+      <label><b> Date of Birth</b></label>
+      <p>{{patient.dob}}</p>
+    </div>
+    <div>
+      <label><b> Age </b></label>
+      <p>{{patient.age}}</p>
+    </div>
+    <div>
+      <label><b> Gender </b></label>
+      <p>{{patient.gender}}</p>
+    </div>
+    <div>
+      <label><b> Health Insurance No</b></label>
+      <p>{{patient.healthinsuranceno}}</p>
+    </div>
+    <div>
+      <label><b> Healthcare Provider</b></label>
+      <p>{{patient.healthcareprovider}}</p>
+    </div>
+    <div>
+      <label><b> Patient Address</b></label>
+      <p>{{patient.patientaddress}}</p>
+    </div>
+    <div>
+      <label><b> Contact Number</b></label>
+      <p>{{patient.contact}}</p>
+    </div>
+    <div>
+      <label><b> Doctor ID</b></label>
+      <p>{{patient.doctorid}}</p>
+    </div>
+    </div>
+    <button (click)="updateLink()" class="btn btn-info">Update</button> <span></span> <br>
+    <button (click)="list()" class="btn btn-primary">Back to Patient List</button><br>
+  </div>
+</div>

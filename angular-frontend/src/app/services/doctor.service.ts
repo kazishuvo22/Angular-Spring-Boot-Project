@@ -39,4 +39,7 @@ export class DoctorService {
   //findByTitle(title: string): Observable<any> {
   //  return this.http.get(`${baseUrl}?title=${title}`);
  // }
+  findByDoctorName(name: string): Observable<any> {
+  return this.http.get(`${baseUrl}/name/${name}`);
+  }
 }
