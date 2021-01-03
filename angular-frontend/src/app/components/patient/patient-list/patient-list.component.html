@@ -21,7 +21,7 @@
       <tbody>
       <tr *ngFor="let patient of patients | async">
         <td>{{patient.name}}</td>
-        <td>{{patient.contact}}</td>
+        <td>0{{patient.contact}}</td>
         <td>{{patient.doctorid}}</td>
         <td><button (click)="deletePatient(patient.id)" class="btn btn-danger">Delete</button>
           <button (click)="updatePatient(patient.id)" class="btn btn-info" style="margin-left: 10px">Update</button>

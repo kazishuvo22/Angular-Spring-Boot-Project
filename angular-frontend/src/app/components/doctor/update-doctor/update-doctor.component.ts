@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import {Tutorial} from "../../../classes/tutorial";
-import {TutorialService} from "../../../services/tutorial.service";
 import {Doctor} from "../../../classes/doctor";
 import {DoctorService} from "../../../services/doctor.service";
 

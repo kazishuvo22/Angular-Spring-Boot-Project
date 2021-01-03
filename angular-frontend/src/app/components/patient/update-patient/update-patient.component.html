@@ -1,6 +1,6 @@
 <div class="row row justify-content-center align-self-center">
-  <div [hidden]="submitted" style="width: 500px;" >
-    <h3>Add Patient Information</h3>
+  <div style="width: 400px;" *ngIf="patient">
+    <h2>Update Doctor Details</h2>
     <form (ngSubmit)="onSubmit()">
       <div class="form-group">
         <label for="name">Patient Name</label>
@@ -52,8 +52,7 @@
 
       <div class="form-group">
         <label for="contact">Contact Number</label>
-        <p>+880<input type="number" class="form-control" id="contact" required [(ngModel)]="patient.contact" name="contact">
-        </p>
+        <input type="number" class="form-control" id="contact" required [(ngModel)]="patient.contact" name="contact">
       </div>
 
       <div class="form-group">
@@ -61,12 +60,12 @@
         <input type="text" class="form-control" id="doctorid" required [(ngModel)]="patient.doctorid" name="doctorid">
       </div>
 
-      <button type="submit" class="btn btn-success">Submit</button>
+
+      <button type="submit" class="btn btn-success">Update</button>
     </form>
 
-  </div>
-
-  <div [hidden]="!submitted">
-    <h4>You submitted successfully!</h4>
+    <br>
+    <br>
+    <button (click)="list()" class="btn btn-primary">Back to Patient List</button><br>
   </div>
 </div>

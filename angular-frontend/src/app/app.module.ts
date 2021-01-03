@@ -18,6 +18,7 @@ import { SearchPageComponent } from './components/doctor/search-page/search-page
 import { AddPatientComponent } from './components/patient/add-patient/add-patient.component';
 import { PatientListComponent } from './components/patient/patient-list/patient-list.component';
 import { PatientDetailsComponent } from './components/patient/patient-details/patient-details.component';
+import { UpdatePatientComponent } from './components/patient/update-patient/update-patient.component';
 
 
 
@@ -35,7 +36,8 @@ import { PatientDetailsComponent } from './components/patient/patient-details/pa
     SearchPageComponent,
     AddPatientComponent,
     PatientListComponent,
-    PatientDetailsComponent
+    PatientDetailsComponent,
+    UpdatePatientComponent
   ],
     imports: [
         RouterModule,

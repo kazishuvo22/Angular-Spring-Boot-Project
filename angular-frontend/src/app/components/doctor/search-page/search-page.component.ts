@@ -13,7 +13,8 @@ import {Router} from "@angular/router";
 })
 export class SearchPageComponent implements OnInit {
 
-  patients: Observable<Patient[]>;
+  patient: Patient;
+  //patient: Patient;
   searchForm;
   constructor(private patientService: PatientService, private router: Router,
               private formBuilder:FormBuilder )
@@ -27,13 +28,21 @@ export class SearchPageComponent implements OnInit {
   }
 
   ngOnInit():void {
+    this.patient = new Patient();
   }
 
   OnSubmit(searchName){
     console.log('Search Patient name and Dob:');
     console.log(searchName.patient_name);
     console.log(searchName.patient_dob);
-    this.patients = this.patientService.findByPatientNameDob(searchName.patient_name, searchName.patient_dob);
+    //this.patients = [];
+
+    this.patientService.findByPatientNameDob(searchName.patient_name, searchName.patient_dob).subscribe(
+      data => {
+        console.log(data);
+        this.patient = data;
+      }, error => console.log(error));
+    console.log(this.patientService.findByPatientNameDob(searchName.patient_name, searchName.patient_dob));
   }
 
   patientDetails(id: string) {
