@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { PatientService } from '../../../services/patient.service';
 import { Patient } from '../../../classes/patient';
+import { Doctor } from '../../../classes/doctor';
+import { DoctorService } from '../../../services/doctor.service';
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-add-patient',
@@ -12,11 +15,13 @@ export class AddPatientComponent implements OnInit {
 
   patient:Patient = new Patient();
   submitted = false;
+  doctors: Observable<Doctor[]>;
 
-  constructor(private patientService: PatientService,
+  constructor(private patientService: PatientService, private doctorService: DoctorService,
               private router: Router) { }
 
   ngOnInit(): void {
+    this.doctors = this.doctorService.getAll();
   }
 
   newPatient(): void {

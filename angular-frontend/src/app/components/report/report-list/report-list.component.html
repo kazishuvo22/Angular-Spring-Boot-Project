@@ -1,0 +1,27 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h4><i class="fas fa-users"></i> Patient Report List:</h4>
+    <button type="button" class="btn btn-success" (click)="addReport()"><i class="fas fa-plus"></i> Create New Report
+    </button>
+    <div class="panel-body">
+      <table class="table table-striped">
+      <tr>
+        <th >Serial No</th>
+        <th>Name</th>
+        <th>Dob</th>
+        <th scope="col">Contact</th>
+      </tr>
+      <tbody>
+      <tr *ngFor="let report of reports | async; let i = index" style="cursor: pointer; "
+          (click)="reportDetails(report.id)">
+        <th scope="row">{{ i + 1 }}</th>
+        <td>{{ getPatientName(report.patientid) }}</td>
+        <td>{{ getPatientDob(report.patientid) | date:'dd.MM.yyyy' }}</td>
+        <td>0{{ getPatientContact(report.patientid) }}</td>
+      </tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>
+</div>

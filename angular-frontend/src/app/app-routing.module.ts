@@ -17,6 +17,8 @@ import {AddPatientComponent} from "./components/patient/add-patient/add-patient.
 import {PatientListComponent} from "./components/patient/patient-list/patient-list.component";
 import {PatientDetailsComponent} from "./components/patient/patient-details/patient-details.component";
 import {UpdatePatientComponent} from "./components/patient/update-patient/update-patient.component";
+import {AddReportComponent} from "./components/report/add-report/add-report.component";
+import {ReportListComponent} from "./components/report/report-list/report-list.component";
 
 const routes: Routes = [
   //Tutorial components route here
@@ -40,6 +42,11 @@ const routes: Routes = [
   { path: 'createPatient', component: AddPatientComponent },
   { path: 'patientDetails/:id', component: PatientDetailsComponent },
   { path: 'updatePatient/:id', component: UpdatePatientComponent},
+
+  //Report components route here
+  { path: '', redirectTo: 'report', pathMatch: 'full'},
+  { path: 'reports', component: ReportListComponent},
+  { path: 'createReport', component: AddReportComponent},
 ];
 
 @NgModule({

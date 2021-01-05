@@ -57,7 +57,13 @@
 
       <div class="form-group">
         <label for="doctorid">Doctor ID</label>
-        <input type="text" class="form-control" id="doctorid" required [(ngModel)]="patient.doctorid" name="doctorid">
+        <select name="doctorid" id="doctorid" [(ngModel)]="patient.doctorid"
+                class="form-control">
+          <option *ngFor="let doctor of doctors| async;"
+                  [value]=[doctor.id]>{{ doctor.doctorname }}
+          </option>
+          <option [value]="null">Not set</option>
+        </select>
       </div>
 
 
