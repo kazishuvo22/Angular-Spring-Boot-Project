@@ -1,8 +1,16 @@
-<div class="row row justify-content-center align-self-center">
-  <div [hidden]="submitted" style="width: 500px;" >
-    <h3 class = "text-center">Add Report Information</h3>
+<div class="card shadow">
+  <div class="card-body">
+    <div class="row">
       <div class="col-md-12">
         <form [formGroup]="reportForm" (ngSubmit)="onSubmit()">
+          <!-- Buttons --->
+          <div class="row">
+            <div class="col-md-12">
+              <button type="submit" class="btn btn-primary" [disabled]="reportForm.invalid">Save changes</button>
+              <button type="button" class="btn btn-danger ml-2" (click)="cancelAdd()">Cancel</button>
+            </div>
+          </div>
+
           <!-- Input Fields --->
 
           <div class="input-group mt-3 mb-3">
@@ -13,7 +21,7 @@
               <option *ngFor="let patient of patients| async;"
                       [value]=[patient.id]>{{ patient.name }} [ {{ patient.dob | date:'dd.MM.yyyy' }} ]
               </option>
-              <option value="" selected>Not set</option>
+              <option>Not set</option>
             </select>
           </div>
 
@@ -27,7 +35,7 @@
               <option *ngFor="let doctor of doctors| async;"
                       [value]=[doctor.id]>{{ doctor.doctorname }} [ {{ doctor.hospital_name }} ]
               </option>
-              <option value="" selected>Not set</option>
+              <option>Not set</option>
             </select>
           </div>
 
@@ -37,9 +45,9 @@
             <div class="input-group-prepend">
               <span class="input-group-text" style="width: 145px;">Blood pressure</span>
             </div>
-            <select formControlName="bloodpressure" class="form-control">
-              <option value="High">High</option>
-              <option value="Low">Low</option>
+            <select formControlName="bloodpressure" type="text" class="form-control">
+            <option value="High">High</option>
+            <option value="Low">Low</option>
             </select>
           </div>
 
@@ -58,7 +66,7 @@
             <div class="input-group-prepend">
               <span class="input-group-text" style="width: 145px;">Weight</span>
             </div>
-            <input formControlName="weight" type="text" class="form-control">
+            <input formControlName="weight" type="number" class="form-control">
           </div>
 
           <!-- Input Fields --->
@@ -80,11 +88,11 @@
               <option *ngFor="let doctor of doctors| async;"
                       [value]=[doctor.id]>{{ doctor.doctorname }} [ {{ doctor.hospital_name }} ]
               </option>
-              <option value="" selected>Not set</option>
+              <option>Not set</option>
             </select>
           </div>
 
-            <!-- Medicine -->
+          <!-- Medicine -->
           <h5 class="text-center">Medicines:</h5>
           <div formArrayName="medicines">
             <div *ngFor="let medicine of medicines.controls; let i = index" class="form-group mt-3 mb-3">
@@ -120,9 +128,9 @@
             <div *ngFor="let diet of diets.controls; let i = index" class="form-group mt-3 mb-3">
               <div formGroupName="{{ i }}" class="input-group">
                 <select formControlName="dietname" type="text" class="form-control">
-                <option *ngFor="let diet of dietes| async;"
-                        [value]=[diet.name]>{{ diet.name }}
-                </option>
+                  <option *ngFor="let diet of dietes| async;"
+                          [value]=[diet.name]>{{ diet.name }}
+                  </option>
                 </select>
                 <select formControlName="description" type="text" class="form-control">
                   <option *ngFor="let diet of dietes| async;"
@@ -142,15 +150,9 @@
             </button>
           </div>
 
-              <button type="submit" class="btn btn-primary" >Save Report</button>
-              <button type="button" class="btn btn-danger ml-2" (click)="cancelAdd()">Cancel</button>
-
         </form>
-
-        </div>
-    <div [hidden]="!submitted">
-      <h4>You submitted successfully!</h4>
-    </div>
       </div>
     </div>
+  </div>
+</div>
 

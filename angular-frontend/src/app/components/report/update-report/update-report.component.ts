@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import {FormArray, FormBuilder, FormGroup, Validators} from "@angular/forms";
-import { Report } from '../../../classes/report';
-import { Patient } from '../../../classes/patient';
-import { Doctor} from "../../../classes/doctor";
-import { DoctorService} from "../../../services/doctor.service";
-import { PatientService} from "../../../services/patient.service";
-import { ReportService } from "../../../services/report.service";
-import { Observable } from "rxjs";
+import {Report} from "../../../classes/report";
+import {Observable} from "rxjs";
+import {Patient} from "../../../classes/patient";
+import {Doctor} from "../../../classes/doctor";
+import {FormArray, FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
+import {PatientService} from "../../../services/patient.service";
+import {DoctorService} from "../../../services/doctor.service";
+import {ReportService} from "../../../services/report.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {Medicine} from "../../../classes/medicine";
 import {MedicinService} from "../../../services/medicin.service";
@@ -14,23 +14,20 @@ import {Diet} from "../../../classes/diet";
 import {DietService} from "../../../services/diet.service";
 
 @Component({
-  selector: 'app-add-report',
-  templateUrl: `./add-report.component.html`,
-  styleUrls: ['./add-report.component.css']
+  selector: 'app-update-report',
+  templateUrl: './update-report.component.html',
+  styleUrls: ['./update-report.component.css']
 })
-export class AddReportComponent implements OnInit {
+export class UpdateReportComponent implements OnInit {
 
   report: Report = new Report();
-  submitted = false;
   reportID: string;
   patientID: string;
   patients: Observable<Patient[]>;
   doctors: Observable<Doctor[]>;
-  patient: Patient;
   medicins: Observable<Medicine[]>;
   dietes: Observable<Diet[]>
 
-  // Build Report Form
   reportForm = this.fb.group({
     patientid: '',
     doctorid: '',
@@ -38,7 +35,7 @@ export class AddReportComponent implements OnInit {
     pulserate:'',
     weight: '',
     medicines: this.fb.array([ this.buildMedicine() ]),
-    allergies: this.fb.array([
+    llergies: this.fb.array([
       this.fb.control('')
     ]),
     disabilities: this.fb.array([
@@ -60,51 +57,49 @@ export class AddReportComponent implements OnInit {
               private fb: FormBuilder) {
   }
 
+
+  // Regular Component functions
   ngOnInit() {
-    this.medicins = this.medicinService.getAll();
     this.dietes = this.dietService.getAll();
+    this.medicins = this.medicinService.getAll();
     this.doctors = this.doctorService.getAll();
     this.patients = this.patientService.getAll();
-    this.patientID = this.route.snapshot.params['id'.toString()];
-    this.patient = new Patient();
-    if (this.patientID) {
-      try {
-        this.patientService.get(this.patientID).subscribe(
-          patientData => {
-            this.patient = patientData;
-            this.reportForm.patchValue({
-              patientid: this.patient.id,
-              doctorid: this.patient.doctorid
-            });
-            console.log(this.patient);
-          }
-        );
-      } catch ( e ) {
-        console.log('Failed to load patient data');
+    this.reportID = this.route.snapshot.params['id'.toString()];
+    this.reportService.get(this.reportID).subscribe(
+      reportData => {
+        this.report = reportData;
+        this.reportForm.patchValue({
+          patientid: this.report.patientid,
+          doctorid: this.report.doctorid,
+          bloodpressure: this.report.bloodpressure,
+          pulserate: this.report.pulserate,
+          weight: this.report.weight,
+          patienthistory: this.report.patienthistory,
+          followupdoctorid: this.report.followupdoctorid,
+          medicines: this.report.mediciness,
+          diets: this.report.diets
+        });
       }
-    }
+    );
   }
 
-  save() {
+  update() {
     this.report = this.reportForm.value;
-    console.log(this.report);
     this.reportService
-      .create(this.report).subscribe(data => {
-        this.report = data;
-        console.log(data);
-        this.report = new Report();
+      .update(this.reportID, this.report).subscribe(reportData => {
+        this.report = reportData;
+        console.log(this.report);
         this.gotoList();
       },
       error => console.log(error));
   }
 
   onSubmit() {
-    this.submitted = true;
-    this.save();
+    this.update();
   }
 
   gotoList() {
-    this.router.navigate([ 'reports']);
+    this.router.navigate([ 'reports' ]);
   }
 
   cancelAdd() {
@@ -114,7 +109,6 @@ export class AddReportComponent implements OnInit {
   get medicines() {
     return this.reportForm.get('medicines') as FormArray;
   }
-
 
   addMedicins() {
     this.medicines.push(this.buildMedicine());
@@ -128,9 +122,9 @@ export class AddReportComponent implements OnInit {
   // Build Medicine form
   private buildMedicine(): FormGroup {
     return this.fb.group({
-      drugname: [ ''],
-      unit: [ '' ],
-      dosage: [ '' ],
+      drugname: [ '', Validators.required ],
+      unit: [ '', Validators.required ],
+      dosage: [ '', Validators.required ],
     });
   }
 
@@ -153,4 +147,6 @@ export class AddReportComponent implements OnInit {
       description: [ '' ],
     });
   }
+
+
 }

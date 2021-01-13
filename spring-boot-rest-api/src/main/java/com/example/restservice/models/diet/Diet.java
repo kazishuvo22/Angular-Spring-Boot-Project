@@ -6,26 +6,21 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection = "diet")
 public class Diet {
     @Id
-    private String diet_id;
+    private String dietid;
 
     private String name;
-    private String descrption;
+    private String description;
 
     public Diet() {
     }
 
-    public Diet(String diet_id, String name, String descrption) {
-        this.diet_id = diet_id;
+    public Diet(String name, String description) {
         this.name = name;
-        this.descrption = descrption;
+        this.description = description;
     }
 
     public String getDietid() {
-        return diet_id;
-    }
-
-    public void setDiet_id(String diet_id) {
-        this.diet_id = diet_id;
+        return dietid;
     }
 
     public String getName() {
@@ -37,20 +32,20 @@ public class Diet {
     }
 
     public String getDescription() {
-        return descrption;
+        return description;
     }
 
-    public void setDescrption(String descrption) {
-        this.descrption = descrption;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
 
     @Override
     public String toString() {
         return "Diet{" +
-                "diet_id='" + diet_id + '\'' +
+                "diet_id='" + dietid + '\'' +
                 ", name='" + name + '\'' +
-                ", descrption='" + descrption + '\'' +
+                ", description='" + description + '\'' +
                 '}';
     }
 }

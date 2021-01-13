@@ -6,12 +6,12 @@ export class Report {
   patientid: string;
   doctorid: string;
   createddate: Date;
-  bloodpressure: number;
+  bloodpressure: string;
   pulserate: number;
   weight: number;
   allergies: string[];
   disabilities: string[];
-  medicines: Medicine[];
+  mediciness: Medicine[];
   diets: Diet[];
   patienthistory: string;
   followupdoctorid: string;

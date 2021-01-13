@@ -1,5 +1,6 @@
 export class Medicine{
+  medicinid: string;
   drugname: string;
-  unit: number;
-  dosage: number;
+  unit: string;
+  dosage: string;
 }

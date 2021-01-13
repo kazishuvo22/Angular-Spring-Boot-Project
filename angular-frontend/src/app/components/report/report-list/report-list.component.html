@@ -12,12 +12,17 @@
         <th scope="col">Contact</th>
       </tr>
       <tbody>
-      <tr *ngFor="let report of reports | async; let i = index" style="cursor: pointer; "
-          (click)="reportDetails(report.id)">
+      <tr *ngFor="let report of reports | async; let i = index" style="cursor: pointer; ">
+        <!--  (click)="reportDetails(report.id)">  -->
         <th scope="row">{{ i + 1 }}</th>
         <td>{{ getPatientName(report.patientid) }}</td>
         <td>{{ getPatientDob(report.patientid) | date:'dd.MM.yyyy' }}</td>
         <td>0{{ getPatientContact(report.patientid) }}</td>
+
+        <td>
+          <button (click)="updateReport(report.id)" class="btn btn-warning" style="margin-left: 10px">Update</button>
+          <button (click)="reportDetails(report.id)" class="btn btn-success" style="margin-left: 10px">Details</button>
+        </td>
       </tr>
       </tbody>
     </table>

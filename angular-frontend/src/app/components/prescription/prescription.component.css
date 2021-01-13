@@ -1,0 +1,16 @@
+@media print {
+  body * {
+    visibility: hidden;
+  -webkit-print-color-adjust: exact !important;
+  }
+
+  input#btnPrint,#btnPrint2 {
+    visibility: hidden !important;
+  }
+
+  #page-wrapper * {
+    visibility: visible;
+  text-align: left;
+    -webkit-print-color-adjust: exact !important;
+  }
+}

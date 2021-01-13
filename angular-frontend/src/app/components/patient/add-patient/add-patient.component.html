@@ -61,7 +61,7 @@
         <select name="doctorid" id="doctorid" [(ngModel)]="patient.doctorid"
                                               class="form-control">
         <option *ngFor="let doctor of doctors| async;"
-                [value]=[doctor.id]>{{ doctor.doctorname }}
+                [value]=[doctor.id]>{{ doctor.doctorname }} [{{ doctor.hospital_name}}]
         </option>
         <option [value]="null">Not set</option>
       </select>

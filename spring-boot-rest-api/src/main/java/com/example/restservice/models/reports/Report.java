@@ -19,7 +19,7 @@ public class Report {
 
     @CreatedDate
     private LocalDate createddate = LocalDate.now();
-    private Double bloodpressure;
+    private String bloodpressure;
     private Double pulserate;
     private Double weight;
     private List<String> allergies;
@@ -29,7 +29,7 @@ public class Report {
     private String patienthistory;
     private String followupdoctorid;
 
-    public Report(String patientid, String doctorid, Double bloodpressure, Double pulserate,
+    public Report(String patientid, String doctorid, String bloodpressure, Double pulserate,
                   Double weight, List<String> allergies, List<String> disabilities,
                   List<Medicin> medicin, List<Diet> diets, String patienthistory, String followupdoctorid) {
         this.patientid = patientid;
@@ -73,11 +73,11 @@ public class Report {
         return createddate;
     }
 
-    public Double getBloodpressure() {
+    public String getBloodpressure() {
         return bloodpressure;
     }
 
-    public void setBloodpressure(Double bloodpressure) {
+    public void setBloodpressure(String bloodpressure) {
         this.bloodpressure = bloodpressure;
     }
 

@@ -3,9 +3,11 @@ com\example\restservice\repository\DoctorRepository.class
 com\example\restservice\models\doctor\Doctor.class
 com\example\restservice\models\medicin\Medicin.class
 com\example\restservice\controllers\reports\ReportController.class
+com\example\restservice\controllers\diet\DietController.class
 com\example\restservice\repository\ReportRepository.class
 com\example\restservice\RestServiceApplication.class
 com\example\restservice\repository\PatientRepository.class
+com\example\restservice\repository\DietRepository.class
 com\example\restservice\controllers\patient\PatientController.class
 com\example\restservice\GreetingController.class
 com\example\restservice\models\diet\Diet.class

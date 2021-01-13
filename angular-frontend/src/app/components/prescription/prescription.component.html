@@ -1,0 +1,129 @@
+<div class="row justify-content-center" xmlns:background-color="http://www.w3.org/1999/xhtml">
+  <div class="card shadow" style="width: 100%;">
+    <div class="card-body m-5">
+      <div class="btn-group float-right">
+        <img src="assets/ic1.jpg">
+      </div>
+      <form class="form-group">
+        <img src="assets/ic2.jpg">
+        <table class="table table-bordered w-100">
+          <thead>
+          </thead>
+          <tbody>
+
+          <tr style="background-color: #E0FFFF;">
+            <th style="background-color: #FEFCFF;" colspan="1"><b>Patient's Name: </b></th>
+            <td colspan="2"><b>{{ patient.name }}</b></td>
+            <th style="background-color: #FEFCFF;" colspan="1"><b>Date: </b></th>
+            <td colspan="2">{{ currentDate | date:'dd-MM-yyyy'}}</td>
+          </tr>
+
+          <tr style="background-color: #FBF6D9;">
+            <th style="background-color: #FEFCFF;"><b>S/o | D/o | W/o</b></th>
+            <td colspan="5"><b></b></td>
+          </tr>
+
+          <tr style="background-color: #E0FFFF;">
+            <th style="background-color: #FEFCFF;" colspan="1"><b> Date of Birth: </b></th>
+            <td colspan="1">{{ patient.dob | date:'dd.MM.yyyy' }}</td>
+            <th style="background-color: #FEFCFF;" colspan="1"><b>Age: </b></th>
+            <td colspan="1">{{ patient.age }}</td>
+            <th style="background-color: #FEFCFF;" colspan="1"><b>Sex: </b></th>
+            <td colspan="1">{{ patient.gender }}</td>
+          </tr>
+
+          <tr style="background-color: #FBF6D9;">
+            <th style="background-color: #FEFCFF;" colspan="1"><b>Health Insurance No: </b></th>
+            <td colspan="2">{{ patient.healthinsuranceno }}</td>
+            <th style="background-color: #FEFCFF;" colspan="1"><b>HealthCare provider: </b></th>
+            <td colspan="2">{{ patient.healthcareprovider }}</td>
+          </tr>
+
+          <tr style="background-color: #E0FFFF;">
+            <th style="background-color: #FEFCFF;" colspan="1"><b>Patient Address: </b></th>
+            <td colspan="5">{{ patient.patientaddress }}</td>
+          </tr>
+
+          <tr style="background-color: #FBF6D9;">
+            <th style="background-color: #FEFCFF;" ccolspan="1"><b>Patient Contact: </b></th>
+            <td colspan="5">0{{ patient.contact }}</td>
+          </tr>
+
+          <tr style="background-color: #E0FFFF;">
+            <th style="background-color: #FEFCFF;" colspan="1">
+              <b>Diagnosed with:</b></th>
+            <td colspan="5"><textarea type="text" rows="4" class="form-control" id="usr"></textarea>
+            </td>
+          </tr>
+
+          <tr style="background-color: #FBF6D9;">
+            <th style="background-color: #FEFCFF;"><b>Blood Pressure: </b></th>
+            <td>{{ report.bloodpressure }}</td>
+            <th style="background-color: #FEFCFF;"><b>Pulse rate: </b></th>
+            <td>{{ report.pulserate }}</td>
+            <th style="background-color: #FEFCFF;"><b>Weight: </b></th>
+            <td>{{ report.weight }} Kg</td>
+          </tr>
+
+          <tr style="background-color: #E0FFFF;">
+            <th style="background-color: #FEFCFF;" colspan="1"><b>Allergies: </b></th>
+            <td colspan="5" *ngFor="let allergy of report.allergies; let i =index"><b>{{ i + 1 }}. {{ allergy }}</b></td>
+          </tr>
+
+          <tr style="background-color: #FBF6D9;">
+            <th style="background-color: #FEFCFF;"><b>Disabilities: </b></th>
+            <td colspan="5" *ngFor="let disability of report.disabilities; let i =index"><b>{{ i + 1 }}. {{ disability }}</b></td>
+          </tr>
+
+          <tr style="background-color: #E0FFFF;">
+            <td colspan="6" class="text-center"><h4>Medicines</h4></td>
+          </tr>
+
+          <tr style="background-color: #FBF6D9;">
+            <th colspan="1" class="text-center"><b>Drug No</b></th>
+            <th colspan="2" class="text-center"><b>Drug Name</b></th>
+            <th colspan="2" class="text-center"><b>Drug Dosage</b></th>
+            <th colspan="1" class="text-center"><b>Drug Unit</b></th>
+          </tr>
+          <tr *ngFor="let medicin of report.mediciness; let i = index">
+            <td colspan="1" class="text-center"><{{ i + 1 }}</td>
+            <td colspan="2" class="text-center">{{ medicin.drugname }}</td>
+            <td colspan="1" class="text-center">{{ medicin.dosage }}</td>
+            <td colspan="1" class="text-center">{{ medicin.unit }}</td>
+          </tr>
+
+          <tr style="background-color: #E0FFFF;">
+            <td colspan="6" class="text-center"><h4>Diets to Follow</h4></td>
+          </tr>
+          <tr style="background-color: #FBF6D9;">
+            <th colspan="1" class="text-center"><b>Diet No</b></th>
+            <th colspan="3" class="text-center"><b>Diet Name</b></th>
+            <th colspan="4" class="text-center"><b>Diet Description</b></th>
+          </tr>
+          <tr class="panel-body" *ngFor="let diet of report.diets; let i = index">
+            <td colspan="1" class="text-center"><b>{{ i + 1 }}</b></td>
+            <td colspan="3" class="text-center">{{ diet.name }}</td>
+            <td colspan="4" class="text-center">{{ diet.description }}</td>
+          </tr>
+          <tr style="background-color: #E0FFFF;">
+            <th style="background-color: #FEFCFF;" colspan="1"><b>Patient History: </b></th>
+            <td colspan="5" >{{ report.patienthistory}}</td>
+          </tr>
+          <tr style="background-color: #FBF6D9;">
+            <th style="background-color: #FEFCFF;" colspan="1"><b>Follow Up Doctor Name: </b></th>
+            <td colspan="5">{{ followUpDoctor.doctorname }}[{{followUpDoctor.hospital_name}}]</td>
+          </tr>
+          </tbody>
+          <tr style="background-color: #E0FFFF;">
+            <td style="background-color: #FEFCFF;" colspan="1"><b><i>Doctor Signature:</i></b></td>
+            <td colspan="5"></td>
+          </tr>
+        </table>
+      </form>
+      <div class="btn-group float-right">
+        <input type="button" class="btn btn-primary" id="btnPrint" onclick="window.print();" value="Print PDF" />
+        <button type="button" (click)="cancel()" class="btn btn-danger ml-2" id="btnPrint2">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>

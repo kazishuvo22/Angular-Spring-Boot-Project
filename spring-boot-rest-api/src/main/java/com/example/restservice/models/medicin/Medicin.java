@@ -9,36 +9,31 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Medicin {
 
     @Id
-    private String medicin_id;
+    private String medicinid;
 
-    private String drug_name;
+    private String drugname;
     private String unit;
     private String dosage;
 
     public Medicin() {
     }
 
-    public Medicin(String medicin_id, String drug_name, String unit, String dosage) {
-        this.medicin_id = medicin_id;
-        this.drug_name = drug_name;
+    public Medicin(String drugname, String dosage, String unit) {
+        this.drugname = drugname;
         this.unit = unit;
         this.dosage = dosage;
     }
 
-    public String getMedicin_id() {
-        return medicin_id;
+    public String getMedicinid() {
+        return medicinid;
     }
 
-    public void setMedicin_id(String medicin_id) {
-        this.medicin_id = medicin_id;
+    public String getDrugname() {
+        return drugname;
     }
 
-    public String getDrug_name() {
-        return drug_name;
-    }
-
-    public void setDrug_name(String drug_name) {
-        this.drug_name = drug_name;
+    public void setDrugname(String drugname) {
+        this.drugname = drugname;
     }
 
     public String getUnit() {
@@ -57,12 +52,11 @@ public class Medicin {
         this.dosage = dosage;
     }
 
-
     @Override
     public String toString() {
         return "Medicin{" +
-                "medicin_id='" + medicin_id + '\'' +
-                ", drug_name='" + drug_name + '\'' +
+                "medicinid='" + medicinid + '\'' +
+                ", drugname='" + drugname + '\'' +
                 ", unit='" + unit + '\'' +
                 ", dosage='" + dosage + '\'' +
                 '}';

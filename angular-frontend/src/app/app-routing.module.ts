@@ -19,6 +19,9 @@ import {PatientDetailsComponent} from "./components/patient/patient-details/pati
 import {UpdatePatientComponent} from "./components/patient/update-patient/update-patient.component";
 import {AddReportComponent} from "./components/report/add-report/add-report.component";
 import {ReportListComponent} from "./components/report/report-list/report-list.component";
+import {ReportDetailsComponent} from "./components/report/report-details/report-details.component";
+import {UpdateReportComponent} from "./components/report/update-report/update-report.component";
+import {PrescriptionComponent} from "./components/prescription/prescription.component";
 
 const routes: Routes = [
   //Tutorial components route here
@@ -47,6 +50,9 @@ const routes: Routes = [
   { path: '', redirectTo: 'report', pathMatch: 'full'},
   { path: 'reports', component: ReportListComponent},
   { path: 'createReport', component: AddReportComponent},
+  { path: 'reportDetails/:id', component: ReportDetailsComponent},
+  { path: 'updateReport/:id', component: UpdateReportComponent},
+  { path: 'prescriptions/:id', component: PrescriptionComponent}
 ];
 
 @NgModule({

@@ -6,11 +6,13 @@ C:\Users\Dell\Desktop\Problem 2\intern-11-2020-spring-angular-problem\spring-boo
 C:\Users\Dell\Desktop\Problem 2\intern-11-2020-spring-angular-problem\spring-boot-rest-api\src\main\java\com\example\restservice\controllers\tutorial\TutorialController.java
 C:\Users\Dell\Desktop\Problem 2\intern-11-2020-spring-angular-problem\spring-boot-rest-api\src\main\java\com\example\restservice\repository\DoctorRepository.java
 C:\Users\Dell\Desktop\Problem 2\intern-11-2020-spring-angular-problem\spring-boot-rest-api\src\main\java\com\example\restservice\GreetingController.java
+C:\Users\Dell\Desktop\Problem 2\intern-11-2020-spring-angular-problem\spring-boot-rest-api\src\main\java\com\example\restservice\repository\MedicinRepository.java
 C:\Users\Dell\Desktop\Problem 2\intern-11-2020-spring-angular-problem\spring-boot-rest-api\src\main\java\com\example\restservice\models\reports\Report.java
 C:\Users\Dell\Desktop\Problem 2\intern-11-2020-spring-angular-problem\spring-boot-rest-api\src\main\java\com\example\restservice\Greeting.java
 C:\Users\Dell\Desktop\Problem 2\intern-11-2020-spring-angular-problem\spring-boot-rest-api\src\main\java\com\example\restservice\models\medicin\Medicin.java
 C:\Users\Dell\Desktop\Problem 2\intern-11-2020-spring-angular-problem\spring-boot-rest-api\src\main\java\com\example\restservice\models\patient\Patient.java
 C:\Users\Dell\Desktop\Problem 2\intern-11-2020-spring-angular-problem\spring-boot-rest-api\src\main\java\com\example\restservice\repository\ReportRepository.java
+C:\Users\Dell\Desktop\Problem 2\intern-11-2020-spring-angular-problem\spring-boot-rest-api\src\main\java\com\example\restservice\controllers\medicin\MedicinController.java
 C:\Users\Dell\Desktop\Problem 2\intern-11-2020-spring-angular-problem\spring-boot-rest-api\src\main\java\com\example\restservice\models\diet\Diet.java
 C:\Users\Dell\Desktop\Problem 2\intern-11-2020-spring-angular-problem\spring-boot-rest-api\src\main\java\com\example\restservice\repository\TutorialRepository.java
 C:\Users\Dell\Desktop\Problem 2\intern-11-2020-spring-angular-problem\spring-boot-rest-api\src\main\java\com\example\restservice\repository\PatientRepository.java

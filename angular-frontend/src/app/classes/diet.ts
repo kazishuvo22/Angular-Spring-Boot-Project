@@ -1,4 +1,5 @@
 export class Diet {
-  dietname: string;
+  dietid: string;
+  name: string;
   description: string;
 }

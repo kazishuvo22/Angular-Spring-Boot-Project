@@ -51,7 +51,7 @@ export class ReportListComponent implements OnInit, OnDestroy {
   }
 
   reportDetails(id: string) {
-    this.router.navigate([ 'details', id ], { relativeTo: this.route });
+    this.router.navigate([ 'reportDetails', id ]);
   }
 
   addReport() {
@@ -81,5 +81,10 @@ export class ReportListComponent implements OnInit, OnDestroy {
     } catch ( error ) {
       return null;
     }
+  }
+
+  updateReport(id: string) {
+    this.router.navigate([ 'updateReport', id ]);
+    
   }
 }
