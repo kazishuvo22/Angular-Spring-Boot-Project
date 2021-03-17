@@ -1,0 +1,74 @@
+<div class="row justify-content-center">
+  <div class="card shadow" style="width: 100%;">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-5"><h5 class="card-title mx-auto">Patient Invoice:</h5></div>
+        <div class="col">
+          <button class="btn btn-success" (click)="updateInvoice(invoice.id)"><i class="fas fa-user-edit"></i> Update
+          </button>
+          <button class="btn btn-primary ml-2" (click)="generateInvoice(invoice.id)"><i class="far fa-file-pdf"></i>
+            Invoice
+          </button>
+          <button class="btn btn-danger ml-2" data-toggle="modal" data-target="#exampleModal"><i
+            class="fas fa-trash"></i> Delete
+          </button>
+          <!-- Delete Confirmation Modal-->
+          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+               aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Delete Confirmation</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <p><b>Are you sure you want to delete?</b></p>
+                  <p>
+                    Patient name: <b>{{ patient.name }}</b><br>
+                    Date of birth: <b>{{ patient.dob | date:'dd.MM.yyyy' }}</b><br>
+                    Assigned Doctor: <b>{{ doctor.doctorname }}</b><br>
+                    Contact no.:<b>{{ patient.contact }}</b>
+                  </p>
+
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" data-dismiss="modal" (click)="deleteInvoice(invoice.id)">
+                    <i class="fas fa-trash"></i> Delete
+                  </button>
+                  <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="far fa-times-circle"></i>
+                    Close
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Delete Confirmation Modal-->
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-5"><h6>Patient Name: </h6></div>
+        <div class="col">{{ patient.name }}</div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-5"><h6>Doctor name:</h6></div>
+        <div class="col">{{ doctor.doctorname }} - ( {{ doctor.hospital_name }} )</div>
+      <hr>
+      <div class="row">
+        <div class="col-md-5"><h6>Items:</h6></div>
+        <div class="col">
+          <p *ngFor="let item of invoice.item; let i = index">
+            <b>Item no:  {{ i + 1 }}</b><br>
+            Item Name: {{ item.itemname }}<br>
+            Unit: {{ item.unitprice }}<br>
+
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

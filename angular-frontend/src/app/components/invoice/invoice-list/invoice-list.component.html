@@ -1,0 +1,28 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h4><i class="fas fa-users"></i> Patient Invoice List:</h4>
+
+    <div class="panel-body">
+      <table class="table table-striped">
+        <tr>
+          <th >Serial No</th>
+          <th>Name</th>
+          <th scope="col">Contact</th>
+        </tr>
+        <tbody>
+        <tr *ngFor="let invoice of invoices | async; let i = index" style="cursor: pointer; ">
+          <th scope="row">{{ i + 1 }}</th>
+          <td>{{ getPatientName(invoice.patientid) }}</td>
+          <td>0{{ getPatientContact(invoice.patientid) }}</td>
+
+          <td>
+            <button (click)="updateInvoice(invoice.id)" class="btn btn-warning" style="margin-left: 10px">Update</button>
+            <button (click)="invoiceDetails(invoice.id)" class="btn btn-success" style="margin-left: 10px">Details</button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+</div>

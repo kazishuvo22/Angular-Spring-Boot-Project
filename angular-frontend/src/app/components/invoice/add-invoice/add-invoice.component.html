@@ -1,0 +1,98 @@
+<div class="row row justify-content-center align-self-center">
+  <div [hidden]="submitted" style="width: 500px;" >
+    <h3 class = "text-center">Add Invoice Information</h3>
+    <div class="col-md-12">
+      <form [formGroup]="invoiceForm" (ngSubmit)="onSubmit()">
+        <!-- Input Fields --->
+
+        <div class="input-group mt-3 mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" style="width: 145px;">Patient Id</span>
+          </div>
+          <select formControlName="patientid" class="form-control">
+            <option *ngFor="let patient of patients| async;" [value]=[patient.id]>
+              {{ patient.name }} [ {{ patient.dob | date:'dd.MM.yyyy' }} ]
+            </option>
+            <option value="" selected>Not set</option>
+          </select>
+        </div>
+
+
+        <!-- Items -->
+        <h5 class="text-center">Items:</h5>
+        <div formArrayName="item">
+          <div *ngFor="let item of itemes.controls; let i = index" class="form-group mt-3 mb-3">
+            <div formGroupName="{{ i }}" class="input-group">
+              <span class="input-group-text" style="width: 145px;">Item no</span>
+              <select formControlName="itemno" type="text" class="form-control">
+                <option *ngFor="let item of items| async;"
+                        [value]=[item.itemno]>{{ item.itemno }}
+                </option>
+              </select>
+
+              <span class="input-group-text" style="width: 145px;">Item Name</span>
+              <select formControlName="itemname" type="text" class="form-control">
+                <option *ngFor="let item of items| async;"
+                        [value]=[item.itemname]>{{ item.itemname }}
+                </option>
+              </select>
+
+              <span class="input-group-text" style="width: 145px;">Test Sort Name</span>
+              <select formControlName="testsortname" type="text" class="form-control">
+                <option *ngFor="let item of items| async;"
+                        [value]=[item.testsortname]>{{ item.testsortname }}
+                </option>
+              </select>
+
+              <span class="input-group-text" style="width: 145px;">Sample Name</span>
+              <select formControlName="samname" type="text" class="form-control">
+                <option *ngFor="let item of items| async;"
+                        [value]=[item.samname]>{{ item.samname }}
+                </option>
+              </select>
+
+              <span class="input-group-text" style="width: 145px;">Unit Price</span>
+              <select formControlName="unitprice" type="text" class="form-control">
+                <option *ngFor="let item of items| async;"
+                        [value]=[item.unitprice]>{{ item.unitprice }}
+                </option>
+              </select>
+
+              <button type="button" class="btn btn-danger" (click)="removeItems(i)">X
+                <i class="fas fa-times"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- add Medicine Button -->
+        <div class="col btn-group">
+          <button (click)="addItems()" type="button" class="btn btn-dark m-1">Add Items<i
+            class="fas fa-plus ml-1"></i>
+          </button>
+        </div>
+
+        <div class="input-group mt-3 mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" style="width: 145px;">Quantity</span>
+          </div>
+          <input formControlName="quantity" type="number" class="form-control">
+        </div>
+
+        <div class="input-group mt-3 mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" style="width: 145px;">Sales Price</span>
+          </div>
+          <input formControlName="salesprice" type="number" class="form-control">
+
+        </div>
+        <button type="submit" class="btn btn-primary" >Save Invoice</button>
+        <button type="button" class="btn btn-danger ml-2" (click)="cancelAdd()">Cancel</button>
+
+      </form>
+
+    </div>
+    <div [hidden]="!submitted">
+      <h4>You submitted successfully!</h4>
+    </div>
+  </div>
+</div>
